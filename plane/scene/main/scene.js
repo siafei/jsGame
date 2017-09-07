@@ -41,7 +41,7 @@ class Scene extends GuaScene {
             if (e instanceof Player) {
                 e.update(this.enemys)
                 if (!e.existed()) {
-                    this.gameover()
+                    setTimeout(this.gameover(),5000)
                 }
             }else{
                 e.update()

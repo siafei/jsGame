@@ -5,6 +5,7 @@ class GuaImage {
         this.name = name
         this.texture.x = 0 
         this.texture.y = 0 
+        this.image_count = 3
 	}
     static new(game,name) {
         var i = new this(game,name)

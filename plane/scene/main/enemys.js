@@ -26,10 +26,14 @@ class Enemys extends GuaImage {
 		if (this.alive()) {
 			this.texture.y += this.speed
 		}else if(this.boom>0) {
-			name = this.name+'_'+this.boom
-			let new_img = this.game.imageByName(name)
-			this.texture.image = new_img.image
-			this.boom--
+			this.image_count--
+			if (this.image_count === 0) {
+				name = this.name+'_'+this.boom
+				let new_img = this.game.imageByName(name)
+				this.texture.image = new_img.image
+				this.boom--
+				this.image_count = 3
+			}
 		}
 	}
 	hit() {
