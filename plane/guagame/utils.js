@@ -17,3 +17,8 @@ var rectIntersects = function(a, b) {
     }
     return false
 }
+
+var getRandomX = function (a,b){
+    var x =Math.floor(Math.random()*(b-a+1))
+    return x+a
+}
