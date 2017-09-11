@@ -35,36 +35,17 @@ var enableDebugMode = function(game, enable) {
 
 var __main = function() {
     var images = {
-        background: 'img/background.png',
-        player: 'img/player.png',
-        bullet: 'img/bullet.png',
-        enemy1: 'img/enemy1.png',
-        enemy2: 'img/enemy2.png',
-        enemy3: 'img/enemy3.png',
-        player_1: 'img/player/1.png',
-        player_2: 'img/player/2.png',
-        player_3: 'img/player/3.png',
-        enemy1_1: 'img/enemy1/1.png',
-        enemy1_2: 'img/enemy1/2.png',
-        enemy1_3: 'img/enemy1/3.png',
-        enemy1_4: 'img/enemy1/4.png',
-        enemy2_1: 'img/enemy2/1.png',
-        enemy2_2: 'img/enemy2/2.png',
-        enemy2_3: 'img/enemy2/3.png',
-        enemy2_4: 'img/enemy2/4.png',
-        enemy3_1: 'img/enemy3/1.png',
-        enemy3_2: 'img/enemy3/2.png',
-        enemy3_3: 'img/enemy3/3.png',
-        enemy3_4: 'img/enemy3/4.png',
-        enemy3_5: 'img/enemy3/5.png',
-        enemy3_6: 'img/enemy3/6.png',
+        sky: 'img/sky.png',
+        bird: 'img/bird.png',
+        land: 'img/land.png',
+        pipe: 'img/pipe.png',
     }
-    var game = GuaGame.instance(30, images, function(g){
+    var game = GuaGame.instance(60, images, function(g){
         var s = Scene.new(g)
         g.runWithScene(s)
     })
 
-    enableDebugMode(game, true)
+    // enableDebugMode(game, true)
 }
 
 __main()

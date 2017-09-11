@@ -26,7 +26,13 @@ class GuaGame {
         return this.i
     }
     drawImage(gua_image) {
-        this.context.drawImage(gua_image.image,gua_image.x,gua_image.y)
+        var ctx = this.context
+        ctx.save()
+        ctx.translate(gua_image.x + gua_image.w / 2,  gua_image.y + gua_image.h / 2)
+        ctx.rotate(gua_image.angle * Math.PI / 180)
+        ctx.drawImage(gua_image.image, -gua_image.w / 2,  -gua_image.h / 2)
+        ctx.restore()
+        // this.context.drawImage(gua_image.image,gua_image.x,gua_image.y)
     }
     // update
     update() {
@@ -102,9 +108,7 @@ class GuaGame {
                 g.images[name] = img
                 // 所有图片都成功载入之后, 调用 run
                 loads.push(1)
-                log('load images', loads.length, names.length)
                 if (loads.length == names.length) {
-                    log('load images', g.images)
                     g.__start()
                 }
             }
